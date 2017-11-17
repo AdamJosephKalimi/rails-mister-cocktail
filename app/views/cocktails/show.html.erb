@@ -1,2 +1,10 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
+<h1>More Details on your poison</h1>
+
+<h3><%= @cocktail.name %></h3>
+<% @cocktail.doses.each do |dose| %>
+<h3><%= dose.description %></h3>
+<h3><%= dose.ingredient.name %></h3>
+<% end %>
+
+<%= link_to "Go back to homepage", cocktails_path %>
+<!-- cocktail.doses returns an array of doses -->
