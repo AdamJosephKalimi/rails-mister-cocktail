@@ -1,0 +1,6 @@
+<%= simple_form_for[@cocktails, @dose] do |f| %>
+<%= f.input :description, placeholder: "Mojito" %>
+<%= f.association :ingredient %>
+<%= f.select :ingredient_id, options_for_select(Ingredient.all.map{|i| [i.name, i.id]} %>
+<%= f.button :submit, class: "btn btn-primary" %>
+<%= end %>
